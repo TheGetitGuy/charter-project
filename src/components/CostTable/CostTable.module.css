@@ -1,0 +1,21 @@
+.table{ 
+    background-color: antiquewhite;
+    text-align: left;
+    outline: 1px solid;
+    padding: 10px;
+}
+.table tbody  {
+    background-color: beige; 
+}
+.table tbody th{ 
+    padding: 5px; 
+    padding-right: 10px;
+    background-color:  lightgoldenrodyellow;
+    width: 3in; 
+    overflow: clip;
+}
+.table tbody td {
+    width: 2in;
+    padding-inline: 20px; 
+    
+}
