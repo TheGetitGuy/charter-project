@@ -1,14 +1,14 @@
 import React from "react";
 
 export default function CostTableRow(props){
-    const {data={name:"N/A",totalCost:"N/A",purchaseDate:"N/A"}} = props
+    const data = props
     const dateObjectDate = new Date(Date.parse(data.purchaseDate))
     return(
         <tr>
-          <th>{data.transactionName}</th>
-          <td>{data.totalCost}</td>
-          <td>{dateObjectDate.toLocaleString('en-US')}</td>
-          <td>{data.rewardPoints}</td>
+          <th>{data.userName}</th>
+          <td>{data.sepPoints}</td>
+          <td>{data.novPoints}</td>
+          <td>{data.octPoints}</td>
           <td>{data.totalRewardPoints}</td>
         </tr>
     )

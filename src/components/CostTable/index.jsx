@@ -2,63 +2,60 @@ import React, { useEffect, useState } from "react"
 import styles from "./CostTable.module.css"
 import CostTableRow from "../CostTableRow"
 import fakeFetch from "../../assets/fakeFetch" 
+import calculatePoints from "../../assets/calculatePoints"
 
 
-export default function CostTable(props) {
-    const {size=10, startIndex = 0, userName} = props
-    const [testData, setTestData] = useState(null)
-    const [currentPurchaseIndex, setPurchaseIndex]=useState(startIndex)
+export default function CostTable( ) { 
+    const [testData, setTestData] = useState(null) 
 
-    function handleClick(amountToChange){
-        setPurchaseIndex((prevI)=>{
-          const pendingCount = (prevI + amountToChange)
-          if (pendingCount < 0){
-            return prevI = 0
-          } 
-          return prevI = pendingCount
-        })
-      }
-    
     useEffect(() => { 
-        fakeFetch(userName)
+        fakeFetch()
             .then((res) => res)
-            .then((res) => {
-                 let endIndex = res.length
-                 let currEndIndex = (currentPurchaseIndex + size)
-                 let nextStartIndex = currentPurchaseIndex
-                 if (currEndIndex > endIndex) {
-                    nextStartIndex = (endIndex - size)
-                    setPurchaseIndex(nextStartIndex)
-                }
-                if(userName !== ""){
-                setTestData(res.slice(nextStartIndex, currEndIndex))
-                }
+            .then((res) => {   
+                const users = new Set();
+                console.log(res)
+                res.forEach(dataEntry => {
+                    users.add(dataEntry.userName) 
+                });
+                const mappedData = Array.from(users.values).map((currentName)=>{
+                    const getMonthPoints = (monthToFilter)=>res.reduce((currEntry, currentTotal)=>{
+                        if(currEntry.userName === currentName && currEntry.purchaseDate.split('-')[1] == monthToFilter){
+                            console.log(currEntry)
+                            currentTotal += calculatePoints(currEntry.totalCost)
+                        }
+                    })
+                    return([currentName] = {
+                        sepPoints: getMonthPoints(9),
+                        octPoints: getMonthPoints(10),
+                        novPoints: getMonthPoints(11),
+                        totalPoints: getMonthPoints(9) + getMonthPoints(10) + getMonthPoints(11)
+                    })
+                }) 
+                setTestData(mappedData)
                 
-
             })
-    }, [currentPurchaseIndex, userName])
+    }, [])
 
     if (testData === null) {
         return <div> ..Loading.. </div>
     }
+    
     return (
         <>
             <table className={styles.table}>
                 <thead>
                     <tr>
                         <th></th>
-                        <th> Cost </th>
-                        <th> Date </th>
-                        <th> Earned-Points </th>
+                        <th> September </th>
+                        <th> October </th>
+                        <th> November </th>
                         <th> Total-Points </th>
                     </tr>
                 </thead>
                 <tbody>
-                    {testData.map((data, index) => <CostTableRow key={data.purchaseDate + "costTable" + index} data={data}></CostTableRow>)}
+                    {testData.map((data, index) => <CostTableRow key={"costTable" + index} data={data}></CostTableRow>)}
                 </tbody>
-            </table>
-            <button onClick={() => { handleClick(-size) }}>{"<-"}</button>
-            <button onClick={() => { handleClick(size) }}>{"->"}</button>
+            </table> 
         </>
     )
 }
