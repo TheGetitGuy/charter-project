@@ -1,7 +1,7 @@
 Please install and run this app.
 
 ---
-[Check out the Component!]("https://thegetitguy.github.io/charter-project/dist/")
+[Check out the Component!](https://thegetitguy.github.io/charter-project/dist/)
 
 npm run dev
 
