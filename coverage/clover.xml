@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1669860274324" clover="3.2.0">
-  <project timestamp="1669860274324" name="All files">
-    <metrics statements="117" coveredstatements="112" conditionals="22" coveredconditionals="20" methods="4" coveredmethods="4" elements="143" coveredelements="136" complexity="0" loc="117" ncloc="117" packages="3" files="4" classes="4"/>
+<coverage generated="1669902021198" clover="3.2.0">
+  <project timestamp="1669902021198" name="All files">
+    <metrics statements="123" coveredstatements="117" conditionals="23" coveredconditionals="21" methods="4" coveredmethods="4" elements="150" coveredelements="142" complexity="0" loc="123" ncloc="123" packages="3" files="4" classes="4"/>
     <package name="assets">
-      <metrics statements="39" coveredstatements="37" conditionals="10" coveredconditionals="9" methods="1" coveredmethods="1"/>
+      <metrics statements="43" coveredstatements="41" conditionals="11" coveredconditionals="10" methods="1" coveredmethods="1"/>
       <file name="calculatePoints.js" path="C:\Users\chubb\Documents\Repositories\charter-project\src\assets\calculatePoints.js">
         <metrics statements="24" coveredstatements="24" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -11,14 +11,14 @@
         <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="4" count="1200" type="stmt"/>
         <line num="5" count="1200" type="cond" truecount="1" falsecount="0"/>
-        <line num="6" count="828" type="cond" truecount="1" falsecount="0"/>
-        <line num="7" count="396" type="cond" truecount="1" falsecount="0"/>
-        <line num="8" count="396" type="stmt"/>
-        <line num="9" count="432" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="432" type="stmt"/>
-        <line num="11" count="432" type="stmt"/>
-        <line num="12" count="432" type="stmt"/>
-        <line num="13" count="432" type="stmt"/>
+        <line num="6" count="852" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="456" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="456" type="stmt"/>
+        <line num="9" count="396" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="396" type="stmt"/>
+        <line num="11" count="396" type="stmt"/>
+        <line num="12" count="396" type="stmt"/>
+        <line num="13" count="396" type="stmt"/>
         <line num="14" count="1200" type="stmt"/>
         <line num="15" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="16" count="600" type="stmt"/>
@@ -32,28 +32,32 @@
         <line num="24" count="1" type="stmt"/>
       </file>
       <file name="fakeFetch.js" path="C:\Users\chubb\Documents\Repositories\charter-project\src\assets\fakeFetch.js">
-        <metrics statements="15" coveredstatements="13" conditionals="4" coveredconditionals="3" methods="0" coveredmethods="0"/>
+        <metrics statements="19" coveredstatements="17" conditionals="5" coveredconditionals="4" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="6" count="6" type="cond" truecount="1" falsecount="0"/>
-        <line num="7" count="6" type="stmt"/>
-        <line num="8" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="6" type="stmt"/>
-        <line num="11" count="6" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="6" type="stmt"/>
+        <line num="6" count="600" type="stmt"/>
+        <line num="7" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="600" type="stmt"/>
+        <line num="10" count="600" type="stmt"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="6" type="cond" truecount="1" falsecount="0"/>
         <line num="13" count="6" type="stmt"/>
-        <line num="14" count="6" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
+        <line num="14" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.CostTable">
-      <metrics statements="62" coveredstatements="59" conditionals="12" coveredconditionals="11" methods="3" coveredmethods="3"/>
+      <metrics statements="64" coveredstatements="60" conditionals="12" coveredconditionals="11" methods="3" coveredmethods="3"/>
       <file name="index.jsx" path="C:\Users\chubb\Documents\Repositories\charter-project\src\components\CostTable\index.jsx">
-        <metrics statements="62" coveredstatements="59" conditionals="12" coveredconditionals="11" methods="3" coveredmethods="3"/>
+        <metrics statements="64" coveredstatements="60" conditionals="12" coveredconditionals="11" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -77,27 +81,27 @@
         <line num="21" count="2" type="stmt"/>
         <line num="22" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="23" count="6" type="stmt"/>
-        <line num="24" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="24" count="6" type="stmt"/>
         <line num="25" count="6" type="cond" truecount="1" falsecount="0"/>
-        <line num="26" count="6" type="stmt"/>
+        <line num="26" count="6" type="cond" truecount="1" falsecount="0"/>
         <line num="27" count="6" type="stmt"/>
         <line num="28" count="6" type="stmt"/>
-        <line num="29" count="6" type="cond" truecount="0" falsecount="1"/>
-        <line num="30" count="0" type="stmt"/>
+        <line num="29" count="6" type="stmt"/>
+        <line num="30" count="6" type="cond" truecount="0" falsecount="1"/>
         <line num="31" count="0" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
-        <line num="33" count="6" type="stmt"/>
-        <line num="34" count="6" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
         <line num="35" count="6" type="stmt"/>
         <line num="36" count="6" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="39" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="40" count="5" type="stmt"/>
-        <line num="41" count="5" type="stmt"/>
-        <line num="42" count="5" type="cond" truecount="1" falsecount="0"/>
-        <line num="43" count="4" type="stmt"/>
-        <line num="44" count="4" type="stmt"/>
+        <line num="37" count="6" type="stmt"/>
+        <line num="38" count="6" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="42" count="5" type="stmt"/>
+        <line num="43" count="5" type="stmt"/>
+        <line num="44" count="5" type="cond" truecount="1" falsecount="0"/>
         <line num="45" count="4" type="stmt"/>
         <line num="46" count="4" type="stmt"/>
         <line num="47" count="4" type="stmt"/>
@@ -108,14 +112,16 @@
         <line num="52" count="4" type="stmt"/>
         <line num="53" count="4" type="stmt"/>
         <line num="54" count="4" type="stmt"/>
-        <line num="55" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="55" count="4" type="stmt"/>
         <line num="56" count="4" type="stmt"/>
-        <line num="57" count="4" type="stmt"/>
-        <line num="58" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="59" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="60" count="4" type="stmt"/>
-        <line num="61" count="4" type="stmt"/>
+        <line num="57" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="58" count="4" type="stmt"/>
+        <line num="59" count="4" type="stmt"/>
+        <line num="60" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="61" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="62" count="4" type="stmt"/>
+        <line num="63" count="4" type="stmt"/>
+        <line num="64" count="4" type="stmt"/>
       </file>
     </package>
     <package name="components.CostTableRow">
