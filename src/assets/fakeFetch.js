@@ -12,7 +12,6 @@ export default function fakeFetch(userName = "") {
         setTimeout(() => { 
             const dataJsonWithPoints = calculatePoints(dataJson.sort(
                 (prevValue, nextValue) => { return (Date.parse(prevValue.purchaseDate) - Date.parse(nextValue.purchaseDate)) }))
-
                 res(dataJsonWithPoints)
         }, 100)
     })

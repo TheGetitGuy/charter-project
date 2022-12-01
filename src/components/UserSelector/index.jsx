@@ -11,8 +11,9 @@ function UserSelector(props){
         querySetter(e.target.value)
     }
     
-    useEffect(()=>{
+    useEffect(()=>{ 
         setOptions(Array.from(optionArray).map((option, index)=>{
+            handleChange({target:{value: option }})
             return (<option key={option + index} value={option}>{option}</option>) 
         }))
     },[optionArray])

@@ -8,17 +8,16 @@ function App() {
   const tableSize = 10
   const [queryName, setQueryName] = useState("")
   const [optionsForUserSelector, setOptionsForUserSelector] = useState([])
-  
+
   useEffect(()=>{
     const setOfNames = new Set()
     fakeFetch().then((res)=>res).then((data)=>{
       data.forEach((purchaseData)=>{
         if(purchaseData.userName){
-        setOfNames.add(purchaseData.userName)}
-        console.log(setOfNames.values())
+        setOfNames.add(purchaseData.userName)} 
       })
       setOptionsForUserSelector(setOfNames.values())
-    })
+    }) 
 
   },[])
 

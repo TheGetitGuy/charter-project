@@ -19,8 +19,7 @@ export default function CostTable(props) {
         })
       }
     
-    useEffect(() => {
-        console.log
+    useEffect(() => { 
         fakeFetch(userName)
             .then((res) => res)
             .then((res) => {
