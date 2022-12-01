@@ -19,8 +19,7 @@ describe("UserSelector",()=>{
     })
 
     test("runs function on change",()=>{
-        render(<UserSelector querySetter={fn} optionArray={testOptions}  />)
-        console.log("AAAAAAAsaaaaaaaaaaAAAAS",fn.mock.calls)
+        render(<UserSelector querySetter={fn} optionArray={testOptions}  />) 
         expect(fn.mock.calls.length).toEqual(2)
     })
 
@@ -28,8 +27,7 @@ describe("UserSelector",()=>{
         const user = userEvent.setup()
         render(<UserSelector querySetter={fn} optionArray={testOptions}  />)
         const optionSelector = await screen.findAllByText("kim")
-        await waitFor(()=>{expect(optionSelector[0].parentElement).toBeDefined})
-        console.log()
+        await waitFor(()=>{expect(optionSelector[0].parentElement).toBeDefined}) 
         await user.selectOptions(optionSelector[0].parentElement, "kim")
         expect(fn.mock.calls.length).toEqual(3)
         
