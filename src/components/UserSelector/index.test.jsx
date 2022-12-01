@@ -20,7 +20,7 @@ describe("UserSelector",()=>{
 
     test("runs function on change",()=>{
         render(<UserSelector querySetter={fn} optionArray={testOptions}  />) 
-        expect(fn.mock.calls.length).toEqual(2)
+        expect(fn.mock.calls.length).toEqual(1)
     })
 
     test("calls function on option change",async ()=>{
@@ -29,7 +29,7 @@ describe("UserSelector",()=>{
         const optionSelector = await screen.findAllByText("kim")
         await waitFor(()=>{expect(optionSelector[0].parentElement).toBeDefined}) 
         await user.selectOptions(optionSelector[0].parentElement, "kim")
-        expect(fn.mock.calls.length).toEqual(3)
+        expect(fn.mock.calls.length).toEqual(2)
         
     })
 })

@@ -13,7 +13,7 @@ function UserSelector(props){
     
     useEffect(()=>{ 
         setOptions(Array.from(optionArray).map((option, index)=>{
-            if(index === 0){handleChange({target:{value: option }})}
+            if(index ===  0){handleChange({target:{value: option }})}
             return (<option key={option + index} value={option}>{option}</option>) 
         }))
     },[optionArray])

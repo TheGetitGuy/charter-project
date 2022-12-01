@@ -30,8 +30,9 @@ export default function CostTable(props) {
                     nextStartIndex = (endIndex - size)
                     setPurchaseIndex(nextStartIndex)
                 }
-
-                 setTestData(res.slice(nextStartIndex, currEndIndex))
+                if(userName !== ""){
+                setTestData(res.slice(nextStartIndex, currEndIndex))
+                }
                 
 
             })
