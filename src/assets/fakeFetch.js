@@ -1,15 +1,19 @@
-import dataJson from "../assets/MOCK_DATA.json"
+import originalDataJson from "../assets/MOCK_DATA.json"
 import calculatePoints from "../assets/calculatePoints"
 
-export default function fakeFetch(startIndex, lastListedIndex) {
-    return new Promise((res) => {
-        setTimeout(() => {
-            if (lastListedIndex === -1) {
-                lastListedIndex = dataJson.length
+export default function fakeFetch(userName = "") {
+    const dataJson = originalDataJson.filter((item)=>{
+            if(userName !== ""){
+                return(item.userName === userName)
             }
+            else return true
+        })
+    return new Promise((res) => {
+        setTimeout(() => { 
             const dataJsonWithPoints = calculatePoints(dataJson.sort(
                 (prevValue, nextValue) => { return (Date.parse(prevValue.purchaseDate) - Date.parse(nextValue.purchaseDate)) }))
-            res(dataJsonWithPoints)
+
+                res(dataJsonWithPoints)
         }, 100)
     })
 }

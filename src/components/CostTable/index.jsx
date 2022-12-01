@@ -5,7 +5,7 @@ import fakeFetch from "../../assets/fakeFetch"
 
 
 export default function CostTable(props) {
-    const {size=10, startIndex = 0} = props
+    const {size=10, startIndex = 0, userName} = props
     const [testData, setTestData] = useState(null)
     const [currentPurchaseIndex, setPurchaseIndex]=useState(startIndex)
 
@@ -20,7 +20,8 @@ export default function CostTable(props) {
       }
     
     useEffect(() => {
-        fakeFetch(currentPurchaseIndex, currentPurchaseIndex + size)
+        console.log
+        fakeFetch(userName)
             .then((res) => res)
             .then((res) => {
                  let endIndex = res.length
@@ -30,11 +31,12 @@ export default function CostTable(props) {
                     nextStartIndex = (endIndex - size)
                     setPurchaseIndex(nextStartIndex)
                 }
+
                  setTestData(res.slice(nextStartIndex, currEndIndex))
                 
 
             })
-    }, [currentPurchaseIndex])
+    }, [currentPurchaseIndex, userName])
 
     if (testData === null) {
         return <div> ..Loading.. </div>

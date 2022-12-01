@@ -5,7 +5,7 @@ export default function CostTableRow(props){
     const dateObjectDate = new Date(Date.parse(data.purchaseDate))
     return(
         <tr>
-          <th>{data.name}</th>
+          <th>{data.transactionName}</th>
           <td>{data.totalCost}</td>
           <td>{dateObjectDate.toLocaleString('en-US')}</td>
           <td>{data.rewardPoints}</td>
