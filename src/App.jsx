@@ -14,7 +14,7 @@ function App() {
 
     <select onChange={handleOptionChange}>
       {sortingMethodNames.map((name)=>{
-        return <option value={name}>{name}</option>
+        return <option key={name} value={name}>{name}</option>
       })}
     </select>
 

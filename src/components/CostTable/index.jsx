@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react"
 import styles from "./CostTable.module.css"
 import CostTableRow from "../CostTableRow"
-import fakeFetch from "../../assets/fakeFetch" 
-import handleData from "../../assets/handleData"
-import numToStringMonthMap from "../../assets/numToMonth.json"
-import { numericSort, alphabetSort } from "../../assets/sortingFunctions"  
+import fakeFetch from "../../mock/fakeFetch" 
+import handleData from "../../utils/handleData" 
+import { numericSort, alphabetSort } from "../../utils/sortingFunctions"  
 const sortingMethodObject = {
-    "default": (s)=>s,
+    "default": (s)=>Object.values(s),
     "totalPoints":  numericSort,
     "userName": alphabetSort,
 }
@@ -19,22 +18,21 @@ export default function CostTable( { sortingMethod = "default" }) {
     useEffect( ()=>{
         fakeFetch()
         .then((res)=>{return res})
-        .then((res)=>{setTestData(handleData(res))})
-    },[sortingMethod])
+        .then((res)=>{
+            const {userObj, monthsUsed} = handleData(res)
+            setTestData(userObj)
+            setMonthSet(monthsUsed) 
+        })
+    },[])
 
-    useEffect(()=>{ 
-            const workingSet = new Set(testData.map((entry)=>{
-                return Array.from(Object.keys(entry.points))
-            }).flat())
-            console.log("working-set", workingSet)
-            setMonthSet(Array.from(workingSet).sort())
-    },[testData])
+  
     //loading render if fetch hasn't returned
     if (testData.length < 1) {
         return <div> ..Loading.. </div>
     }
 
     function renderFunction(){
+        //render Function for the rows.
         return (sortingMethodObject[sortingMethod](testData))
         .map((data, index) => <CostTableRow key={"costTable" + index} monthSet={monthSet} data={data}></CostTableRow>)
     }
@@ -45,15 +43,15 @@ export default function CostTable( { sortingMethod = "default" }) {
                 <thead>
                     <tr>
                         <th></th> 
-                        {monthSet ? monthSet.map((monthToPrint)=>{ 
+                        {monthSet.map((monthToPrint)=>{ 
                             //create headers dynamically of all months used
-                            return <th key={monthToPrint}>{numToStringMonthMap[monthToPrint]}</th>
-                        }):null}
+                            return <th key={monthToPrint}>{monthToPrint}</th>
+                        })}
                         <th> Total-Points </th>
                     </tr>
                 </thead>
                 <tbody>
-                    {testData?renderFunction():null}
+                    {renderFunction()}
                 </tbody>
             </table> 
         </>

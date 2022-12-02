@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.77% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>60/62</span>
+                <span class='fraction'>60/60</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.61% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>11/13</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.77% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>60/62</span>
+                <span class='fraction'>60/60</span>
             </div>
         
             
@@ -122,10 +122,7 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -146,20 +143,18 @@
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -172,28 +167,28 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useEffect, useState } from "react"
 import styles from "./CostTable.module.css"
 import CostTableRow from "../CostTableRow"
-import fakeFetch from "../../assets/fakeFetch" 
-import handleData from "../../assets/handleData"
-import numToStringMonthMap from "../../assets/numToMonth.json"
-import { numericSort, alphabetSort } from "../../assets/sortingFunctions"  
+import fakeFetch from "../../mock/fakeFetch" 
+import handleData from "../../utils/handleData" 
+import { numericSort, alphabetSort } from "../../utils/sortingFunctions"  
 const sortingMethodObject = {
-    "default": (s)=&gt;s,
+    "default": (s)=&gt;Object.values(s),
     "totalPoints":  numericSort,
     "userName": alphabetSort,
 }
@@ -206,22 +201,21 @@ export default function CostTable( { sortingMethod = "default" }) {
     useEffect( ()=&gt;{
         fakeFetch()
         .then((res)=&gt;{return res})
-        .then((res)=&gt;{setTestData(handleData(res))})
+        .then((res)=&gt;{
+            const {userObj, monthsUsed} = handleData(res)
+            setTestData(userObj)
+            setMonthSet(monthsUsed) 
+        })
     },[sortingMethod])
 &nbsp;
-    useEffect(()=&gt;{ 
-            const workingSet = new Set(testData.map((entry)=&gt;{
-                return Array.from(Object.keys(entry.points))
-            }).flat())
-            console.log("working-set", workingSet)
-            setMonthSet(Array.from(workingSet).sort())
-    },[testData])
+  
     //loading render if fetch hasn't returned
     if (testData.length &lt; 1) {
         return &lt;div&gt; ..Loading.. &lt;/div&gt;
     }
 &nbsp;
     function renderFunction(){
+        //render Function for the rows.
         return (sortingMethodObject[sortingMethod](testData))
         .map((data, index) =&gt; &lt;CostTableRow key={"costTable" + index} monthSet={monthSet} data={data}&gt;&lt;/CostTableRow&gt;)
     }
@@ -232,15 +226,15 @@ export default function CostTable( { sortingMethod = "default" }) {
                 &lt;thead&gt;
                     &lt;tr&gt;
                         &lt;th&gt;&lt;/th&gt; 
-                        {monthSet ? monthSet.map((monthToPrint)=&gt;{ 
-<span class="cstat-no" title="statement not covered" >                            //create headers dynamically of all months used</span>
-<span class="cstat-no" title="statement not covered" >                            return &lt;th key={monthToPrint}&gt;{numToStringMonthMap[monthToPrint]}&lt;/th&gt;</span>
-                        }<span class="branch-0 cbranch-no" title="branch not covered" >):null}</span>
+                        {monthSet.map((monthToPrint)=&gt;{ 
+                            //create headers dynamically of all months used
+                            return &lt;th key={monthToPrint}&gt;{monthToPrint}&lt;/th&gt;
+                        })}
                         &lt;th&gt; Total-Points &lt;/th&gt;
                     &lt;/tr&gt;
                 &lt;/thead&gt;
                 &lt;tbody&gt;
-                    {testData?renderFunction<span class="branch-0 cbranch-no" title="branch not covered" >():null}</span>
+                    {renderFunction()}
                 &lt;/tbody&gt;
             &lt;/table&gt; 
         &lt;/&gt;
@@ -253,7 +247,7 @@ export {<span class="fstat-no" title="function not covered" >sortingMethodObject
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-12-02T18:52:12.975Z
+                at 2022-12-02T21:54:05.613Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

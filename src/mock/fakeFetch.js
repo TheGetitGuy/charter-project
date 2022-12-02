@@ -1,6 +1,5 @@
 import dataJson from "./mockData.json"
-import calculatePoints from "../assets/calculatePoints"
-
+ 
 export default function fakeFetch() {
 
     return new Promise((res) => {
@@ -10,6 +9,6 @@ export default function fakeFetch() {
                     
                 res(dataJsonDateSorted)
                 
-        }, 100)
+        }, 200)
     })
 }
