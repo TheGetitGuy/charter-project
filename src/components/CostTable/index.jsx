@@ -2,39 +2,18 @@ import React, { useEffect, useState } from "react"
 import styles from "./CostTable.module.css"
 import CostTableRow from "../CostTableRow"
 import fakeFetch from "../../assets/fakeFetch" 
-import calculatePoints from "../../assets/calculatePoints"
-
+import handleData from "../../assets/handleData"
 
 export default function CostTable( ) { 
     const [testData, setTestData] = useState(null) 
 
-    useEffect(() => { 
+
+    useEffect( ()=>{
         fakeFetch()
-            .then((res) => res)
-            .then((res) => {   
-                const users = new Set();
-                console.log(res)
-                res.forEach(dataEntry => {
-                    users.add(dataEntry.userName) 
-                });
-                const mappedData = Array.from(users.values).map((currentName)=>{
-                    const getMonthPoints = (monthToFilter)=>res.reduce((currEntry, currentTotal)=>{
-                        if(currEntry.userName === currentName && currEntry.purchaseDate.split('-')[1] == monthToFilter){
-                            console.log(currEntry)
-                            currentTotal += calculatePoints(currEntry.totalCost)
-                        }
-                    })
-                    return([currentName] = {
-                        sepPoints: getMonthPoints(9),
-                        octPoints: getMonthPoints(10),
-                        novPoints: getMonthPoints(11),
-                        totalPoints: getMonthPoints(9) + getMonthPoints(10) + getMonthPoints(11)
-                    })
-                }) 
-                setTestData(mappedData)
-                
-            })
-    }, [])
+        .then((res)=>{return res})
+        .then((res)=>{setTestData(handleData(res))})
+        
+    },[])
 
     if (testData === null) {
         return <div> ..Loading.. </div>
@@ -42,6 +21,8 @@ export default function CostTable( ) {
     
     return (
         <>
+        {console.log(testData)}        
+       
             <table className={styles.table}>
                 <thead>
                     <tr>

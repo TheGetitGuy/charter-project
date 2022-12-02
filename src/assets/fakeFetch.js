@@ -4,11 +4,11 @@ import calculatePoints from "../assets/calculatePoints"
 export default function fakeFetch() {
 
     return new Promise((res) => {
-        setTimeout(() => { 
+         setTimeout(() => { 
                 const dataJsonDateSorted = dataJson.sort(
                     (prevValue, nextValue) => { return (Date.parse(prevValue.purchaseDate) - Date.parse(nextValue.purchaseDate)) })
             
-                return dataJsonDateSorted
+                res(dataJsonDateSorted)
                 
         }, 100)
     })
