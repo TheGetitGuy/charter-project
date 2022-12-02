@@ -9,12 +9,14 @@ export default function handleData(dataToTransform){
     setOfNames.forEach((entryValue)=>{
         const points = {} 
         points[entryValue] = (dataSorted.reduce((totalPoints, dataEntry)=>{ 
-            
-            const returnPoints = (totalPoints + calculatePoints(+dataEntry.totalCost))
+            if (entryValue !== dataEntry.userName){return totalPoints}
+            const currMonth = (dataEntry.purchaseDate.split("-")[1]) 
+            const returnPoints = {...totalPoints, [currMonth]:((totalPoints[currMonth] || 0) + calculatePoints(+dataEntry.totalCost))}
+        
             return returnPoints
-        },0)) 
+        },{})) 
 
-        finalObject.push({
+        finalObject.push(entryValue = {
             userName: entryValue,
             points: points[entryValue]
         })
