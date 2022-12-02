@@ -6,7 +6,7 @@ import handleData from "../../assets/handleData"
 import numToStringMonthMap from "../../assets/numToMonth.json"
 
 export default function CostTable( ) { 
-    const [testData, setTestData] = useState(null)
+    const [testData, setTestData] = useState([])
     const [monthSet, setMonthSet] = useState(null)
 
 
@@ -15,16 +15,15 @@ export default function CostTable( ) {
         .then((res)=>{return res})
         .then((res)=>{setTestData(handleData(res))})
     },[])
-    useEffect(()=>{
-        if(testData){
+    useEffect(()=>{ 
             const workingSet = new Set(testData.map((entry)=>{
                 return Array.from(Object.keys(entry.points))
             }).flat())
             console.log(workingSet)
-            setMonthSet(Array.from(workingSet).sort())}
+            setMonthSet(Array.from(workingSet).sort())
     },[testData])
 
-    if (testData === null) {
+    if (testData.length < 1) {
         return <div> ..Loading.. </div>
     }
     

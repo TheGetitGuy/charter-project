@@ -9,14 +9,12 @@ npm run coverage - generate a Vitest coverage report.
 
 File                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -------------------------|---------|----------|---------|---------|-------------------
-All files                |      96 |    92.59 |     100 |      96 | 
- assets                  |   95.23 |     90.9 |     100 |   95.23 | 
+All files                |   91.12 |    86.95 |     100 |   91.12 | 
+ assets                  |     100 |      100 |     100 |     100 | 
   calculatePoints.js     |     100 |      100 |     100 |     100 | 
-  fakeFetch.js           |   88.88 |       80 |     100 |   88.88 | 7-8
- components/CostTable    |   93.65 |    91.66 |     100 |   93.65 | 
-  index.jsx              |   93.65 |    91.66 |     100 |   93.65 | 30-33
- components/CostTableRow |     100 |      100 |     100 |     100 | 
-  index.jsx              |     100 |      100 |     100 |     100 | 
- components/UserSelector |     100 |      100 |     100 |     100 | 
-  index.jsx              |     100 |      100 |     100 |     100 | 
- 
+  fakeFetch.js           |     100 |      100 |     100 |     100 | 
+  handleData.js          |     100 |      100 |     100 |     100 | 
+ components/CostTable    |   78.43 |    66.66 |     100 |   78.43 | 
+  index.jsx              |   78.43 |    66.66 |     100 |   78.43 | 20,31-40
+ components/CostTableRow |     100 |       50 |     100 |     100 | 
+  index.jsx              |     100 |       50 |     100 |     100 | 14

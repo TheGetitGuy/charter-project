@@ -11,8 +11,8 @@ export default function CostTableRow({data, monthSet}){
       {console.log(points)}
           <th>{userName}</th>
           {
-            monthSet.map(
-            (monthNumber)=><td>{points[monthNumber] || 0}</td> )
+            monthSet?.map(
+            (monthNumber)=><td key={"userName"+ monthNumber} >{points[monthNumber] || 0}</td> )
           } 
           <td>{totalRewardPoints}</td>
         </tr>

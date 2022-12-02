@@ -2,11 +2,13 @@ import { cleanup, render } from "@testing-library/react";
 import { afterEach, describe, test, expect } from "vitest";
 import CostTableRow from "../CostTableRow";
 const testingData = {
-    name: "bazinga",
-    totalCost: 10,
-    purchaseDate: "2022-10-13T07:59:22Z",
-    rewardPoints: 12,
-    totalRewardPoints: 13,
+    userName: "bazinga",
+    points:{ 
+        "3":12,
+        "4":122,
+        "5":11,
+    }
+    
 }
 afterEach(()=>{
     cleanup()
