@@ -28,7 +28,7 @@ export default function CostTable( { sortingMethod = "default" }) {
   
     //loading render if fetch hasn't returned
     if (testData.length < 1) {
-        return <table className={styles.table}> <tr><tbody><td > ..Loading.. </td></tbody></tr></table>
+        return <div> ..Loading.. </div>
     }
 
     function renderFunction(){

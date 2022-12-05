@@ -14,21 +14,21 @@ describe("CostTable",()=>{
     })
     test("should render data", async ()=>{
         render(<CostTable></CostTable>)
-        const item = await screen.findAllByText("Tiff")[0]
+        const item = await screen.findAllByText("Diane")[0]
         waitFor(()=>{expect(item).toBeDefined()})
     })
     test("data doesn't load if not received yet",()=>{
         render(<CostTable/>)
-        expect(screen.queryByText("Tiff")).toBeNull()
+        expect(screen.queryByText("Diane")).toBeNull()
     })
     test("should change when option changed",async ()=>{
         render(<CostTable></CostTable>)
         const item = await screen.findAllByRole("row") 
-        expect(within(item[1]).getByText("Tiff")).toBeDefined
+        expect(within(item[1]).getByText("Diane")).toBeDefined()
         cleanup()
         render(<CostTable sortingMethod="userName"></CostTable>)
         const item2 = await screen.findAllByRole("row")
-        expect(within(item2[1]).getByText("Carmichael")).toBeDefined
+        expect(within(item2[1]).getByText("Carmichael")).toBeDefined()
         cleanup()
         render(<CostTable sortingMethod="totalPoints"></CostTable>)
         const item3 = await screen.findAllByRole("row")
