@@ -19,16 +19,16 @@ export default function CostTable( { sortingMethod = "default" }) {
         fakeFetch()
         .then((res)=>{return res})
         .then((res)=>{
-            const {userObj, monthsUsed} = handleData(res)
-            setTestData(userObj)
+            const {userArr, monthsUsed} = handleData(res)
+            setTestData(userArr)
             setMonthSet(monthsUsed) 
         })
-    },[])
+    },[sortingMethod])
 
   
     //loading render if fetch hasn't returned
     if (testData.length < 1) {
-        return <div> ..Loading.. </div>
+        return <table className={styles.table}> <tr><tbody><td > ..Loading.. </td></tbody></tr></table>
     }
 
     function renderFunction(){

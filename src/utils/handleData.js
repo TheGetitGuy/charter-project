@@ -13,8 +13,9 @@ export default function handleData(dataToTransform) {
         userObj[row.userName][monthStr] += calculatePoints(+row.totalCost);
     })
     const monthsUsed = Array.from(monthsUsedSet)
+    const userArr = Object.values(userObj)
     //console.log(`%cUser ${JSON.stringify(monthsUsed)}`, "color:red;")
-     return {userObj, monthsUsed}
+     return {userArr, monthsUsed}
 }
 
 

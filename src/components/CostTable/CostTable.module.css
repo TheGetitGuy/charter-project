@@ -1,8 +1,10 @@
 .table{ 
+    display: block;
     background-color: antiquewhite;
     text-align: left;
     outline: 1px solid;
     padding: 10px;
+    min-width:100%;
 }
 .table tbody  {
     background-color: beige; 

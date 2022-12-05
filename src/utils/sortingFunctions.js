@@ -7,16 +7,14 @@ function strToUpperInt(str){
         singleLetter.charCodeAt(0)
     )
 }
-export function numericSort(obj){  
-    const objValueArr = Object.values(obj)
+export function numericSort(objValueArr){  
     return objValueArr.sort((arrItem, arrItemNext) => {
         return (arrItemNext.totalPoints - arrItem.totalPoints)
     })
 } 
 
 
-export function alphabetSort(obj){  
-    const objValueArr = Object.values(obj) 
+export function alphabetSort(objValueArr){   
     return objValueArr.sort((arrItem, arrItemNext) => {
         return ((strToUpperInt(arrItem.userName)) - (strToUpperInt(arrItemNext.userName))) 
     }) 

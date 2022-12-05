@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react' 
 import './App.css' 
 import CostTable, {sortingMethodObject} from './components/CostTable' 
+
 const sortingMethodNames = Object.keys(sortingMethodObject)
 function App() {
   const [option, setOption] = useState();
